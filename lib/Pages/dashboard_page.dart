@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:pas_mobile_11pplg1_14/Controller/dashboard_controller.dart';
+import 'package:pas_mobile_11pplg1_14/Pages/bookmarkDB_page.dart';
 import 'package:pas_mobile_11pplg1_14/Pages/bookmark_page.dart';
+import 'package:pas_mobile_11pplg1_14/Pages/product_db.dart';
 import 'package:pas_mobile_11pplg1_14/Pages/product_page.dart';
 import 'package:pas_mobile_11pplg1_14/Pages/profile_page.dart';
 
@@ -11,6 +12,7 @@ class DashboardPage extends StatelessWidget {
 
   final navigation = Get.put(DashboardController());
   final List<Widget> pages = [ProductPage(), BookmarkPage(), ProfilePage()];
+  final List<Widget> pages2 = [ProductDb(), BookmarkdbPage(), ProfilePage()];
   final List<String> pagenames = [
     "Product List",
     'Bookmarked Product',
@@ -21,7 +23,7 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        body: pages[navigation.selectedIndex.value],
+        body: pages2[navigation.selectedIndex.value],
 
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.lightGreen,

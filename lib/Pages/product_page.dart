@@ -39,13 +39,10 @@ class ProductPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              padding: const EdgeInsets.all(
-                                3,
-                              ), 
+                              padding: const EdgeInsets.all(3),
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors
-                                    .lightGreen, 
+                                color: Colors.lightGreen,
                               ),
                               child: CircleAvatar(
                                 radius: 40,
@@ -66,6 +63,11 @@ class ProductPage extends StatelessWidget {
                               product.description,
                               textAlign: TextAlign.center,
                               style: TextStyle(color: Colors.grey[700]),
+                            ),
+                            Text(
+                              product.price as String,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.blueGrey),
                             ),
                           ],
                         ),
