@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pas_mobile_11pplg1_14/Models/ClientNetwork1.dart';
 import 'package:pas_mobile_11pplg1_14/Models/Login.dart';
-import 'package:pas_mobile_11pplg1_14/Pages/Logger/register_page.dart';
 import 'package:pas_mobile_11pplg1_14/Routes/routes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -102,7 +101,7 @@ class LoginController extends GetxController {
         await prefs.clear();
 
         // ✅ Kembali ke login
-        Get.offAllNamed(AppRoutes.login);
+        Get.offAllNamed(AppRoutes.splash);
 
         Get.snackbar(
           "Logout",

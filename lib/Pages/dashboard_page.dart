@@ -24,7 +24,7 @@ class DashboardPage extends StatelessWidget {
         body: pages[navigation.selectedIndex.value],
 
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.lightGreen,
           type: BottomNavigationBarType.fixed,
           currentIndex: navigation.selectedIndex.value,
           onTap: navigation.changeTab,

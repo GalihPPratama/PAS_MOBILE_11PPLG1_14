@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:pas_mobile_11pplg1_14/Models/Products.dart';
+import 'package:pas_mobile_11pplg1_14/Routes/routes.dart';
 
 class ProductController extends GetxController {
   var isLoading = false.obs;
@@ -12,6 +13,8 @@ class ProductController extends GetxController {
     super.onInit();
     fetchProductTable();
   }
+
+
 
   Future<void> fetchProductTable() async {
     const url = "https://fakestoreapi.com/products";
@@ -34,5 +37,21 @@ class ProductController extends GetxController {
       //backup plan. i.e., warning snackbar typeshit desuwa~
     }
     isLoading.value = false;
+  }
+
+
+  var bookmarks = <int>{}.obs;
+
+  void toggleBookmark(int index) {
+    if (bookmarks.contains(index)) {
+      bookmarks.remove(index);
+    } else {
+      bookmarks.add(index);
+    }
+  }
+
+  
+  void gotodetails(int index) {
+    Get.toNamed(AppRoutes.details, arguments: {'index': index});
   }
 }
